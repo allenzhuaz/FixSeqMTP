@@ -1,0 +1,25 @@
+#' FixSeqMTP : Tools for Fixed Sequence Multiple Testing Procedures
+#'
+#' The FixSeqMTP package provides two categories of functions for generalized fixed sequence mutliple hypothese testing:
+#'@section FWER controlling procedures:
+#'
+#'    \code{\link{FSFWER.arbidept.p.adjust}} and  \code{\link{FSFWER.arbidept.cv}}
+#'
+#'@section FDR controlling procedures:
+#'
+#'    \code{\link{FSFDR.arbidept.p.adjust}} and  \code{\link{FSFDR.arbidept.cv}}
+#'
+#'    \code{\link{FSFDR.indept.p.adjust}} and  \code{\link{FSFDR.indept.cv}}
+#'
+#'@author Yalin Zhu
+#'@references
+#'   Qiu, Z., Guo, W., & Lynch, G. (2015).
+#'   On generalized fixed sequence procedures for controlling the FWER.
+#'   \emph{Statistics in medicine}, 34(30), 3968-3983.
+#'
+#'  Lynch, G., Guo, W., Sarkar, S. K., & Finner, H. (2016).
+#'  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
+#'  \emph{arXiv preprint} arXiv:1611.03146.
+#'@docType package
+#'@name FixSeqMTP
+NULL
