@@ -128,7 +128,7 @@ optim.both.adjp <- function(alpha, p, beta){
   return(adjp-alpha)
   }
 
-#' Adjusted P-values for Fixed Sequence FWER Controlling Procedures
+#' Adjusted P-values for Fixed Sequence FWER Controlling Procedures under Arbitrary Dependence
 #'
 #'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
@@ -179,7 +179,7 @@ FSFWER.arbidept.p.adjust <- function(p, alpha=0.05, beta=0.5, tol = 1e-6, method
   } else{return(opt.adjp)}
 }
 
-#' Critical Values for Fixed Sequence FWER Controlling Procedures
+#' Critical Values for Fixed Sequence FWER Controlling Procedures under Arbitrary Dependence
 #'
 #'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'

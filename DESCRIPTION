@@ -11,12 +11,11 @@ Description: The FixSeqMTP package is designed to test a sequence of pre-
     Procedures (g-FSMTPs). The proposed three FWER controlling g-FSMTPs utilize
     numbers of rejections and acceptances, all of the procedures are designed under
     arbitrary dependence. The proposed two FDR controlling g-FSMTPs allows more but
-    a given number of acceptances (>=1), the procedures are designed for arbitrary
+    a given number of acceptances (k>=1), the procedures are designed for arbitrary
     dependence and independence. The main functions for each proposed g-FSMTPs are
     designed to calculate adjusted p-values and critical values, respectively. For
     users' convenience, the output results also include the option of decision rules
     for convenience.
 License: GPL (>= 2)
 Encoding: UTF-8
-LazyData: true
-
+LazyData: TRUE

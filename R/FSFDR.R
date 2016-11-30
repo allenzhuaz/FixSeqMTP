@@ -105,7 +105,7 @@ optim.indept.adjp <- function(alpha, p, k){
 
 #' Adjusted P-values for Fixed Sequence FDR Controlling Procedures under Arbitrary Dependence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using the generalized fixed sequence multiple testing procedures under arbitrary dependence (See Theorem 3.1 and 4.1 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFDR.arbidept.p.adjust(p, alpha=0.05, k=1, tol = 1e-6, make.decision = TRUE)
@@ -126,7 +126,7 @@ optim.indept.adjp <- function(alpha, p, k){
 #'  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
 #'  \emph{arXiv preprint} arXiv:1611.03146.
 #'@examples
-#' ## generate a pre-ordered pvalue vector for 100 hypotheses, where 60% are true nulls
+#' ## generate a pre-ordered pvalue vector for 50 hypotheses, where 60% are true nulls
 #' set.seed(1234); n <- 50; pi0 <- 0.6
 #' mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
 #' Zstat <- rnorm(n = n, mean = mu)
@@ -149,9 +149,9 @@ FSFDR.arbidept.p.adjust <- function(p, alpha=0.05, k=1, tol = 1e-6, make.decisio
 }
 
 
-#' Critical Values for Fixed Sequence FDR Controlling Procedures
+#' Critical Values for Fixed Sequence FDR Controlling Procedures under Arbitrary Dependence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using the generalized fixed sequence multiple testing procedures under arbitrary dependence (See Theorem 3.1 and 4.1 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFDR.arbidept.cv(p, k=1, alpha = 0.05, make.decision = TRUE)
@@ -168,7 +168,7 @@ FSFDR.arbidept.p.adjust <- function(p, alpha=0.05, k=1, tol = 1e-6, make.decisio
 #'  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
 #'  \emph{arXiv preprint} arXiv:1611.03146.
 #'@examples
-#' ## generate a pre-ordered pvalue vector for 100 hypotheses, where 60% are true nulls
+#' ## generate a pre-ordered pvalue vector for 50 hypotheses, where 60% are true nulls
 #' set.seed(1234); n <- 50; pi0 <- 0.6
 #' mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
 #' Zstat <- rnorm(n = n, mean = mu)
@@ -203,7 +203,7 @@ FSFDR.arbidept.cv <- function(p, k=1, alpha = 0.05, make.decision = TRUE){
 
 #' Adjusted P-values for Fixed Sequence FDR Controlling Procedures under Independence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using the generalized fixed sequence multiple testing procedures under independence for true nulls (See Theorem 3.2 and 4.2 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFDR.indept.p.adjust(p, alpha=0.05, k=1, tol = 1e-6, make.decision = TRUE)
@@ -224,7 +224,7 @@ FSFDR.arbidept.cv <- function(p, k=1, alpha = 0.05, make.decision = TRUE){
 #'  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
 #'  \emph{arXiv preprint} arXiv:1611.03146.
 #'@examples
-#' ## generate a pre-ordered pvalue vector for 100 hypotheses, where 60% are true nulls
+#' ## generate a pre-ordered pvalue vector for 50 hypotheses, where 60% are true nulls
 #' set.seed(1234); n <- 50; pi0 <- 0.6
 #' mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
 #' Zstat <- rnorm(n = n, mean = mu)
@@ -246,9 +246,9 @@ FSFDR.indept.p.adjust <- function(p, alpha=0.05, k=1, tol = 1e-6, make.decision 
   } else{return(opt.adjp)}
 }
 
-#' Critical Values for Fixed Sequence FDR Controlling Procedures
+#' Critical Values for Fixed Sequence FDR Controlling Procedures under Independence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using the generalized fixed sequence multiple testing procedures under independence for true nulls (See Theorem 3.2 and 4.2 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFDR.indept.cv(p, k=1, alpha = 0.05, tol = 1e-6, make.decision = TRUE)
@@ -266,7 +266,7 @@ FSFDR.indept.p.adjust <- function(p, alpha=0.05, k=1, tol = 1e-6, make.decision 
 #'  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
 #'  \emph{arXiv preprint} arXiv:1611.03146.
 #'@examples
-#' ## generate a pre-ordered pvalue vector for 100 hypotheses, where 60% are true nulls
+#' ## generate a pre-ordered pvalue vector for 50 hypotheses, where 60% are true nulls
 #' set.seed(1234); n <- 50; pi0 <- 0.6
 #' mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
 #' Zstat <- rnorm(n = n, mean = mu)
