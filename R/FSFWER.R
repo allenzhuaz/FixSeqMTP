@@ -4,15 +4,15 @@
 #'
 #'@usage
 #' bisection.FWER(f, a=0, b=1, p, beta, j, n = 1000, tol)
-#'@param f the objective function which to be optimized for the solution.
-#'@param a mininum of the interval which cantains the solution from bisection algorithm.
-#'@param b maxinum of the interval which cantains the solution from bisection algorithm.
+#'@param f the objective function to be optimized for the solution.
+#'@param a mininum of the interval which contains the solution from bisection algorithm.
+#'@param b maxinum of the interval which contains the solution from bisection algorithm.
 #'@param p numeric vector of p-values (possibly with \code{\link[base]{NA}}s). Any other R is coerced by \code{\link[base]{as.numeric}}. Same as in \code{\link[stats]{p.adjust}}.
 #'@param beta  pre-specified constant satisfying \eqn{0 \le \beta <1}, only for \code{method="accept"}.
 #'@param j index of the hypothesis.
 #'@param n  number of sections that the interval which from bisection algorithm.
 #'@param tol desired accuracy.
-#'@return a solution of the objective function which between the interwal from \code{a} to \code{b}.
+#'@return a solution of the objective function which is between the interval from \code{a} to \code{b}.
 #'@author Yalin Zhu
 #'@seealso \code{\link{bisection.FDR}}
 #'@export
@@ -130,7 +130,7 @@ optim.both.adjp <- function(alpha, p, beta){
 
 #' Adjusted P-values for Fixed Sequence FWER Controlling Procedures under Arbitrary Dependence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using one of three generalized fixed sequence FWER controlling procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFWER.arbidept.p.adjust(p, alpha=0.05, beta=0.5, tol = 1e-6,
@@ -144,9 +144,9 @@ optim.both.adjp <- function(alpha, p, beta){
 #'@return
 #' A numeric vector of the adjusted p-values (of the same length as \code{p}) if  \code{make.decision = FALSE}, or  a data frame including original p-values, adjusted p-values and decision rules if \code{make.decision = TRUE}.
 #'@details
-#' The adjustment methods for Fixed Sequence multiple testing include the Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
+#' The adjustment methods for Fixed Sequence multiple testing include Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
 #'  The three methods strongly control FWER under arbitrary dependence.
-#'  The constant \code{beta} need to be specified only for the Procedure A2 (\code{"accept"}),  one can ignore this argument when using other methods.
+#'  The constant \code{beta} needs to be specified for the Procedure A2 (\code{"accept"}), while one can ignore this argument when using other methods.
 #'@seealso \code{\link{FSFDR.arbidept.p.adjust}} and   \code{\link{FSFDR.arbidept.p.adjust}} for fixed sequence FDR controlling procedures.
 #'@author Yalin Zhu
 #'@references
@@ -175,13 +175,13 @@ FSFWER.arbidept.p.adjust <- function(p, alpha=0.05, beta=0.5, tol = 1e-6, method
                           both = bisection.FWER(optim.both.adjp, p=p, j=j, beta=beta, tol=tol, a = 0, b = 1))
   }
   if (make.decision==TRUE){
-    return(data.frame(p.value = p, adjust.p.value=opt.adjp, decision=ifelse(opt.adjp<=alpha, "reject","accept")))
+    return(data.frame(raw.p = p, adjust.p=opt.adjp, decision=ifelse(opt.adjp<=alpha, "reject","accept")))
   } else{return(opt.adjp)}
 }
 
 #' Critical Values for Fixed Sequence FWER Controlling Procedures under Arbitrary Dependence
 #'
-#'  Given a set of pre-ordered p-values and accuracy for the result, returns critical values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+#'  Given a set of pre-ordered p-values and accuracy for the result, return the corresponding critical values using one of three generalized fixed sequence FWER controlling procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 #'
 #'@usage
 #'  FSFWER.arbidept.cv(p, alpha=0.05, beta=0.5, tol = 1e-6,
@@ -195,9 +195,9 @@ FSFWER.arbidept.p.adjust <- function(p, alpha=0.05, beta=0.5, tol = 1e-6, method
 #'@return
 #' A numeric vector of the critical values (of the same length as \code{p}) if  \code{make.decision = FALSE}, or  a data frame including original p-values, critical values and decision rules if \code{make.decision = TRUE}.
 #'@details
-#' The critical value calculation methods for Fixed Sequence multiple testing include the Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
+#' The critical value calculation methods for Fixed Sequence multiple testing include Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
 #'  The three methods strongly control FWER under arbitrary dependence.
-#'  The constant \code{beta} need to be specified only for the Procedure A2 (\code{"accept"}),  one can ignore this argument when using other methods.
+#'  The constant \code{beta} needs to be specified for the Procedure A2 (\code{"accept"}), while one can ignore this argument when using other methods.
 #'@seealso \code{\link{FSFDR.arbidept.cv}} and   \code{\link{FSFDR.indept.cv}} for fixed sequence FDR controlling procedures.
 #'@author Yalin Zhu
 #'@references
@@ -228,7 +228,7 @@ FSFWER.arbidept.cv <- function(p, alpha=0.05, beta=0.5, tol = 1e-6, method = c("
   else{s <- s+1}
   }
   if (make.decision==TRUE){
-    return(data.frame(p.value = p, critical.value=cv, decision=ifelse(p<=cv, "reject","accept")))
+    return(data.frame(raw.p = p, critical.value=cv, decision=ifelse(p<=cv, "reject","accept")))
   } else{return(cv)}
 }
 
