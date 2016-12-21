@@ -2,7 +2,7 @@
 % Please edit documentation in R/FSFDR.R
 \name{FSFDR.indept.p.adjust}
 \alias{FSFDR.indept.p.adjust}
-\title{Adjusted P-values for Fixed Sequence FDR Controlling Procedures under Independence}
+\title{Adjusted P-values for Fixed Sequence FDR Controlling Procedure under Independence}
 \usage{
 FSFDR.indept.p.adjust(p, alpha=0.05, k=1, tol = 1e-6, make.decision = TRUE)
 }
@@ -24,14 +24,14 @@ A numeric vector of the adjusted p-values (of the same length as \code{p}) if  \
 Given a set of pre-ordered p-values and accuracy for the result, returns adjusted p-values using the generalized fixed sequence multiple testing procedures under independence for true nulls (See Theorem 3.2 and 4.2 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 }
 \details{
-The generalized fixed sequence procedures designed to control FDR should be stop on the \eqn{k}-th acceptances and automatically accept the rest of hypotheses, where \eqn{k} is a pre-specified positive integer. When \eqn{k=1}, the generalized procedure becomes conventional one (Theorem 3.2 in Lynch et al. (2016)), which stops testing once one acceptance appears.
- This method strongly control FDR if the true null p-valuesare mutually independent and are independent of the false null p-values. When k=1, the conventional procedure strongly controls FDR if  the p-values are negatively associated on thetrue null p-values.
+The generalized fixed sequence FDR controlling procedure stops on the \eqn{k}-th acceptances and automatically accepts the rest of hypotheses, where \eqn{k} is a pre-specified positive integer. When \eqn{k=1}, the generalized procedure becomes conventional one (Theorem 3.2 in Lynch et al. (2016)), which stops testing once one acceptance appears.
+ This method strongly controls FDR if the true null p-values are mutually independent and are independent of the false null p-values. When k=1, the conventional procedure strongly controls FDR if  the p-values are negatively associated on the true null p-values.
 }
 \examples{
-## generate a pre-ordered pvalue vector for 50 hypotheses, where 60\% are true nulls
-set.seed(1234); n <- 50; pi0 <- 0.6
-mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
-Zstat <- rnorm(n = n, mean = mu)
+## generate a pre-ordered pvalue vector for 50 hypotheses, where 80\% are true nulls
+set.seed(1234); m <- 50; pi0 <- 0.8; m0 <- m*pi0; m1 <- m-m0
+mu <- c(4*0.9^(1:m1), rep(0,m0))
+Zstat <- rnorm(n = m, mean = mu)
 Pval <- 1-pnorm(Zstat)
 ## conventional fixed sequence procedure
 FSFDR.indept.p.adjust(p = Pval, alpha = 0.05)

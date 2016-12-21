@@ -2,7 +2,7 @@
 % Please edit documentation in R/FSFDR.R
 \name{FSFDR.indept.cv}
 \alias{FSFDR.indept.cv}
-\title{Critical Values for Fixed Sequence FDR Controlling Procedures under Independence}
+\title{Critical Values for Fixed Sequence FDR Controlling Procedure under Independence}
 \usage{
 FSFDR.indept.cv(p, k=1, alpha = 0.05, tol = 1e-6, make.decision = TRUE)
 }
@@ -21,13 +21,13 @@ FSFDR.indept.cv(p, k=1, alpha = 0.05, tol = 1e-6, make.decision = TRUE)
 A numeric vector of the critical values (of the same length as \code{p}) if  \code{make.decision = FALSE}, or  a data frame including original p-values, critical values and decision rules if \code{make.decision = TRUE}.
 }
 \description{
-Given a set of pre-ordered p-values and accuracy for the result, returns critical values using the generalized fixed sequence multiple testing procedures under independence for true nulls (See Theorem 3.2 and 4.2 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+Given a set of pre-ordered p-values and accuracy for the result, return the corresponding critical values using the generalized fixed sequence FDR controlling procedure under independence for true nulls (See Theorem 3.2 and 4.2 in Lynch et al. (2016)). The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 }
 \examples{
-## generate a pre-ordered pvalue vector for 50 hypotheses, where 60\% are true nulls
-set.seed(1234); n <- 50; pi0 <- 0.6
-mu <- sample(c(0,3), n, replace = TRUE, prob = c(pi0,1-pi0))
-Zstat <- rnorm(n = n, mean = mu)
+## generate a pre-ordered pvalue vector for 50 hypotheses, where 80\% are true nulls
+set.seed(1234); m <- 50; pi0 <- 0.8; m0 <- m*pi0; m1 <- m-m0
+mu <- c(4*0.9^(1:m1), rep(0,m0))
+Zstat <- rnorm(n = m, mean = mu)
 Pval <- 1-pnorm(Zstat)
 ## conventional fixed sequence procedure
 FSFDR.indept.cv(p = Pval, alpha = 0.05)

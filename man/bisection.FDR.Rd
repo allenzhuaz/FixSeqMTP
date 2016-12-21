@@ -7,11 +7,11 @@
 bisection.FDR(f, a=0, b=1, p, k, j, n = 1000, tol)
 }
 \arguments{
-\item{f}{the objective function which to be optimized for the solution.}
+\item{f}{the objective function to be optimized for the solution.}
 
-\item{a}{mininum of the interval which cantains the solution from bisection algorithm.}
+\item{a}{mininum of the interval which contains the solution from bisection algorithm.}
 
-\item{b}{maxinum of the interval which cantains the solution from bisection algorithm.}
+\item{b}{maxinum of the interval which contains the solution from bisection algorithm.}
 
 \item{p}{numeric vector of p-values (possibly with \code{\link[base]{NA}}s). Any other R is coerced by \code{\link[base]{as.numeric}}. Same as in \code{\link[stats]{p.adjust}}.}
 
@@ -24,7 +24,7 @@ bisection.FDR(f, a=0, b=1, p, k, j, n = 1000, tol)
 \item{tol}{the desired accuracy.}
 }
 \value{
-a solution of the objective function which between the interwal from \code{a} to \code{b}.
+a solution of the objective function which is between the interval from \code{a} to \code{b}.
 }
 \description{
 Bisection algorithm to find the solution for the adjusted p-value for FDR controlling g-FSMTPs.

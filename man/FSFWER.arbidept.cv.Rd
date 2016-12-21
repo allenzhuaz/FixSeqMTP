@@ -24,12 +24,12 @@ FSFWER.arbidept.cv(p, alpha=0.05, beta=0.5, tol = 1e-6,
 A numeric vector of the critical values (of the same length as \code{p}) if  \code{make.decision = FALSE}, or  a data frame including original p-values, critical values and decision rules if \code{make.decision = TRUE}.
 }
 \description{
-Given a set of pre-ordered p-values and accuracy for the result, returns critical values using one of several generalized fixed sequence multiple testing procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
+Given a set of pre-ordered p-values and accuracy for the result, return the corresponding critical values using one of three generalized fixed sequence FWER controlling procedures. The function also provides an option to make decisions given a pre-specified significant level \eqn{\alpha}.
 }
 \details{
-The critical value calculation methods for Fixed Sequence multiple testing include the Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
+The critical value calculation methods for Fixed Sequence multiple testing include Procedure A1 only using numbers of rejections ("reject"), Procedure A2 only using numbers of acceptances ("accept") and Procedure A3 using both numbers of rejections and numbers of acceptances ("both").
  The three methods strongly control FWER under arbitrary dependence.
- The constant \code{beta} need to be specified only for the Procedure A2 (\code{"accept"}),  one can ignore this argument when using other methods.
+ The constant \code{beta} needs to be specified for the Procedure A2 (\code{"accept"}), while one can ignore this argument when using other methods.
 }
 \examples{
   ## Clinical trial example in Qiu et al. (2015)

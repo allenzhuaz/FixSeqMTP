@@ -6,7 +6,7 @@
 \alias{FixSeqMTP-package}
 \title{FixSeqMTP : Tools for Fixed Sequence Multiple Testing Procedures}
 \description{
-The FixSeqMTP package provides two categories of functions for generalized fixed sequence mutliple hypothese testing:
+The FixSeqMTP package provides three categories of functions for generalized/directional fixed sequence mutliple testing procedures:
 }
 \section{FWER controlling procedures}{
 
@@ -21,6 +21,14 @@ The FixSeqMTP package provides two categories of functions for generalized fixed
 
    \code{\link{FSFDR.indept.p.adjust}} and  \code{\link{FSFDR.indept.cv}}
 }
+
+\section{mdFWER controlling procedures}{
+
+
+   \code{\link{FSmdFWER.arbidept.p.adjust}} and  \code{\link{FSmdFWER.arbidept.cv}}
+
+   \code{\link{FSmdFWER.indept.p.adjust}} and  \code{\link{FSmdFWER.indept.cv}}
+}
 \author{
 Yalin Zhu
 }
@@ -32,5 +40,9 @@ Qiu, Z., Guo, W., & Lynch, G. (2015).
  Lynch, G., Guo, W., Sarkar, S. K., & Finner, H. (2016).
  The Control of the False Discovery Rate in Fixed Sequence Multiple Testing.
  \emph{arXiv preprint} arXiv:1611.03146.
+
+ Grandhi, A., Guo, W., & Romano, J. P. (2016).
+ Control of Directional Errors in Fixed Sequence Multiple Testing.
+ \emph{arXiv preprint} arXiv:1602.02345.
 }
 
