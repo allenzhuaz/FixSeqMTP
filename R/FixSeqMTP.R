@@ -17,7 +17,7 @@
 #'
 #'    \code{\link{FSmdFWER.indept.p.adjust}} and  \code{\link{FSmdFWER.indept.cv}}
 #'
-#'@author Yalin Zhu
+#'@author Yalin Zhu, Wenge Guo
 #'@references
 #'   Qiu, Z., Guo, W., & Lynch, G. (2015).
 #'   On generalized fixed sequence procedures for controlling the FWER.
