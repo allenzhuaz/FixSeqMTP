@@ -2,7 +2,7 @@
 % Please edit documentation in R/FSmdFWER.R
 \name{FSmdFWER.arbidept.p.adjust}
 \alias{FSmdFWER.arbidept.p.adjust}
-\title{Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence}
+\title{Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence Along with Directional Decisions Regarding Parameters of Interest}
 \usage{
 FSmdFWER.arbidept.p.adjust(p, test.stat, alpha=0.05, make.decision = TRUE)
 }
@@ -25,7 +25,6 @@ Given a set of pre-ordered test statistics and the corresponding p-values, retur
 ## Clinical trial example in Grandhi et al. (2016)
 Pval <- c(0.0008, 0.0135, 0.0197, 0.7237, 0.0003, 0.2779, 0.0054, 0.8473)
 Zstat <- c(3.4434, 2.5085, 2.3642, -0.3543, 3.7651, 1.0900, 2.8340, 0.1930)
-FSmdFWER.arbidept.p.adjust(p = Pval, make.decision = FALSE)
 FSmdFWER.arbidept.p.adjust(p = Pval, test.stat = Zstat, make.decision = TRUE)
 }
 \author{

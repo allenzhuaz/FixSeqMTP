@@ -1,4 +1,4 @@
-#' Critical values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence
+#' Critical values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence Along with Directional Decisions Regarding Parameters of Interest
 #'
 #' Given a set of pre-ordered test statistics and the corresponding p-values, returns critical values using the directional fixed sequence multiple testing procedures under arbitrary dependence (See Procedure 1 and Theorem 1 in Grandhi et al. (2016)). The function also provides an option to make decisions and determine the sign given a pre-specified significant level \eqn{\alpha} and the test statistics.
 #'
@@ -20,7 +20,6 @@
 #' ## Clinical trial example in Grandhi et al. (2016)
 #' Pval <- c(0.0008, 0.0135, 0.0197, 0.7237, 0.0003, 0.2779, 0.0054, 0.8473)
 #' Zstat <- c(3.4434, 2.5085, 2.3642, -0.3543, 3.7651, 1.0900, 2.8340, 0.1930)
-#' FSmdFWER.arbidept.cv(p = Pval, make.decision = FALSE)
 #' FSmdFWER.arbidept.cv(p = Pval, test.stat = Zstat, make.decision = TRUE)
 #' @export
 FSmdFWER.arbidept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE){
@@ -43,7 +42,7 @@ FSmdFWER.arbidept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE)
 }
 
 
-#' Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence
+#' Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Arbitrary Dependence Along with Directional Decisions Regarding Parameters of Interest
 #'
 #' Given a set of pre-ordered test statistics and the corresponding p-values, returns adjusted p-values using the directional fixed sequence multiple testing procedures under arbitrary dependence (See Procedure 1 and Theorem 1 in Grandhi et al. (2016)). The function also provides an option to make decisions and determine the sign given a pre-specified significant level \eqn{\alpha} and the test statistics.
 #'
@@ -65,7 +64,6 @@ FSmdFWER.arbidept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE)
 #' ## Clinical trial example in Grandhi et al. (2016)
 #' Pval <- c(0.0008, 0.0135, 0.0197, 0.7237, 0.0003, 0.2779, 0.0054, 0.8473)
 #' Zstat <- c(3.4434, 2.5085, 2.3642, -0.3543, 3.7651, 1.0900, 2.8340, 0.1930)
-#' FSmdFWER.arbidept.p.adjust(p = Pval, make.decision = FALSE)
 #' FSmdFWER.arbidept.p.adjust(p = Pval, test.stat = Zstat, make.decision = TRUE)
 #' @export
 FSmdFWER.arbidept.p.adjust <- function(p, test.stat, alpha=0.05, make.decision = TRUE){
@@ -82,7 +80,7 @@ FSmdFWER.arbidept.p.adjust <- function(p, test.stat, alpha=0.05, make.decision =
 
 
 
-#' Critical values for Fixed Sequence mdFWER Controlling Procedure under Independence
+#' Critical values for Fixed Sequence mdFWER Controlling Procedure under Independence Along with Directional Decisions Regarding Parameters of Interest
 #'
 #' Given a set of pre-ordered test statistics and the corresponding p-values, returns critical values using the directional fixed sequence multiple testing procedures under independence (See Procedure 2 and Theorem 2 in Grandhi et al. (2016)). The function also provides an option to make decisions and determine the sign given a pre-specified significant level \eqn{\alpha} and the test statistics.
 #'
@@ -104,7 +102,6 @@ FSmdFWER.arbidept.p.adjust <- function(p, test.stat, alpha=0.05, make.decision =
 #' ## Clinical trial example in Grandhi et al. (2016)
 #' Pval <- c(0.0008, 0.0135, 0.0197, 0.7237, 0.0003, 0.2779, 0.0054, 0.8473)
 #' Zstat <- c(3.4434, 2.5085, 2.3642, -0.3543, 3.7651, 1.0900, 2.8340, 0.1930)
-#' FSmdFWER.indept.cv(p = Pval, make.decision = FALSE)
 #' FSmdFWER.indept.cv(p = Pval, test.stat = Zstat, make.decision = TRUE)
 #' @export
 FSmdFWER.indept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE){
@@ -126,7 +123,7 @@ FSmdFWER.indept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE){
   } else{return(cv)}
 }
 
-#' Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Independence
+#' Adjusted P-values for Fixed Sequence mdFWER Controlling Procedure under Independence Along with Directional Decisions Regarding Parameters of Interest
 #'
 #' Given a set of pre-ordered test statistics and the corresponding p-values, returns adjusted p-values using the directional fixed sequence multiple testing procedures under independence (See Procedure 2 and Theorem 2 in Grandhi et al. (2016)). The function also provides an option to make decisions and determine the sign given a pre-specified significant level \eqn{\alpha} and the test statistics.
 #'
@@ -148,7 +145,6 @@ FSmdFWER.indept.cv <- function(p, test.stat, alpha=0.05, make.decision = TRUE){
 #' ## Clinical trial example in Grandhi et al. (2015)
 #' Pval <- c(0.0008, 0.0135, 0.0197, 0.7237, 0.0003, 0.2779, 0.0054, 0.8473)
 #' Zstat <- c(3.4434, 2.5085, 2.3642, -0.3543, 3.7651, 1.0900, 2.8340, 0.1930)
-#' FSmdFWER.indept.p.adjust(p = Pval, make.decision = FALSE)
 #' FSmdFWER.indept.p.adjust(p = Pval, test.stat = Zstat, make.decision = TRUE)
 #' @export
 FSmdFWER.indept.p.adjust <- function(p, test.stat, alpha=0.05, make.decision = TRUE){

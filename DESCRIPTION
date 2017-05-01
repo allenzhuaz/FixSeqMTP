@@ -9,13 +9,20 @@ Suggests:
 Author: Yalin Zhu, Wenge Guo
 Maintainer: Yalin Zhu <yalin.zhu@outlook.com>
 BugReports: https://github.com/allenzhuaz/FixSeqMTP/issues
-Description: Several generalized/directional Fixed Sequence Multiple Testing Procedures (g-
-    FSMTPs/d-FSMTPs) are developed for testing a sequence of pre-ordered hypotheses while
-    controlling the FWER, FDR and Directional Error (mdFWER). All three FWER controlling g-FSMTPs are designed under arbitrary dependence, which allow any number of acceptances. Two FDR controlling g-FSMTPs are respectively designed under arbitrary dependence and independence, which allow more but a given number of acceptances. Two mdFWER controlling d-FSMTPs are respectively designed under arbitrary dependence and independence, which can also make directional decisions based on the signs of the test statistics. The main
-    functions for each proposed g-FSMTPs are designed to calculate adjusted p-values
-    and critical values, respectively. For users' convenience, the output results
-    also include the option of decision rules for convenience.
+Description: Several generalized / directional Fixed Sequence Multiple Testing
+    Procedures (FSMTPs) are developed for testing a sequence of pre-ordered
+    hypotheses while controlling the FWER, FDR and Directional Error (mdFWER).
+    All three FWER controlling generalized FSMTPs are designed under arbitrary
+    dependence, which allow any number of acceptances. Two FDR controlling
+    generalized FSMTPs are respectively designed under arbitrary dependence and
+    independence, which allow more but a given number of acceptances. Two mdFWER
+    controlling directional FSMTPs are respectively designed under arbitrary
+    dependence and independence, which can also make directional decisions based
+    on the signs of the test statistics. The main functions for each proposed
+    generalized / directional FSMTPs are designed to calculate adjusted p-values
+    and critical values, respectively. For users' convenience, the functions also
+    provide the output option for printing decision rules.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 5.0.1
+
