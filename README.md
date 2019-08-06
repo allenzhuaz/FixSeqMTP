@@ -1,6 +1,6 @@
 # FixSeqMTP
 
-## Fixed Sequence Multiple Testing Procedures
+## *Fix*ed *Seq*uence *M*ultiple *T*esting *P*rocedures
 
 [![](https://www.r-pkg.org/badges/version/FixSeqMTP?color=orange)](https://cran.r-project.org/package=FixSeqMTP) [![](http://cranlogs.r-pkg.org/badges/grand-total/FixSeqMTP?color=blue)](https://cran.r-project.org/package=FixSeqMTP) [![](https://img.shields.io/badge/lifecycle-stable-freshgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 
